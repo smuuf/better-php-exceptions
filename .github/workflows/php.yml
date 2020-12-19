@@ -1,0 +1,31 @@
+name: PHP tests
+
+on: [push]
+
+jobs:
+  Tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install
+      run: |
+        composer install --optimize-autoloader
+        chmod +x ./bin/*
+    - name: Disable xdebug
+      run: sudo phpdismod xdebug
+    - name: Run tests PHP 7.4
+      run: chmod +x ./bin/* && ./bin/test --php phpdbg7.4 --coverage html
+    - name: Storing PHP 7.4 Coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: php74-coverage
+        path: ./coverage.html
+    - name: Run tests PHP 8.0
+      run: chmod +x ./bin/* && ./bin/test --php phpdbg8.0 --coverage html
+    - name: Storing PHP 8.0 Coverage
+      uses: actions/upload-artifact@v2
+      with:
+        name: php8.0-coverage
+        path: ./coverage.html
+    - name: Run static analysis
+      run: ./bin/phpstan # || true # Ignore phpstan error exit code.

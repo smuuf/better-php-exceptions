@@ -1,0 +1,28 @@
+{
+	"name": "smuuf/better-php-exceptions",
+	"description": "Package providing better and improved PHP exceptions.",
+	"license": "MIT",
+	"type": "library",
+	"authors": [
+		{
+			"name": "Premysl Karbula",
+			"email": "premavansmuuf+composer@gmail.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/smuuf/better-php-exceptions/issues",
+		"source": "https://github.com/smuuf/better-php-exceptions"
+	},
+	"autoload":{
+		"psr-4": {
+			"Smuuf\\BetterExceptions\\": "src/"
+		}
+	},
+	"require": {
+		"php": "^7.4|^8.0"
+	},
+	"require-dev": {
+		"nette/tester": "^2.0",
+		"phpstan/phpstan": "^0.12"
+	}
+}

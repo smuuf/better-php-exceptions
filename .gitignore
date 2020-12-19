@@ -1,0 +1,5 @@
+vendor/**
+.vscode/**
+temp/**
+/tests/**/output/*.actual
+/tests/**/output/*.expected
