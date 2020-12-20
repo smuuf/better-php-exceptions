@@ -118,11 +118,14 @@ Even though `PHP 8.0` was released near the end of 2020, PHP 7 is still used ext
 
 ## Which native PHP exceptions can be made better?
 
-Currently only a handful _(in fact only a single one, since I needed that for my other project: [`Primi language: A scripting language written in PHP`](https://github.com/smuuf/primi))_. But the **system is built to support easy addition** of more _better exceptions_.
+Currently only a handful _(in the beginning it was just a single one, since I needed that for my other project: [`Primi language: A scripting language written in PHP`](https://github.com/smuuf/primi))_. But the **system is built to support easy addition** of more _better exceptions_.
 
 ### So... which ones?
 
 - `\TypeError` can be converted into:
 	- `\Smuuf\BetterExceptions\Types\ArgumentTypeError`
 	- `\Smuuf\BetterExceptions\Types\ReturnTypeError`
+
+- `\Error` can be converted into:
+	- `\Smuuf\BetterExceptions\Types\UnknownNamedParameterError`
 

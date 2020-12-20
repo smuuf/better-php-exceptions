@@ -15,7 +15,7 @@ abstract class BaseTypeErrorProcessor implements ProcessorInterface {
 
 		$msg = $ex->getMessage();
 
-		// Try if this TypeError is about a type of passed argument.
+		// Is this \TypeError is about the type of passed argument?
 		if ($match = RegexMatcher::matchEither(static::getArgumentTypeRegexes(), $msg)) {
 
 			static::processMatch($match);
@@ -28,7 +28,7 @@ abstract class BaseTypeErrorProcessor implements ProcessorInterface {
 
 		}
 
-		// Try if this TypeError is about a type of returned value.
+		// Is this \TypeError is about the type of returned value?
 		if ($match = RegexMatcher::match(static::getReturnTypeRegex(), $msg)) {
 
 			static::processMatch($match);
