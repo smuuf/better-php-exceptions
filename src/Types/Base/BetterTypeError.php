@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Smuuf\BetterExceptions\Types;
+namespace Smuuf\BetterExceptions\Types\Base;
 
+/**
+ * Abstract parent for better exceptions created from \TypeError.
+ */
 abstract class BetterTypeError extends \TypeError {
-
-	public const ARGUMENT_TYPEERROR = 1;
-	public const RETURN_TYPEERROR = 2;
 
 	/** @var string Exception message. */
 	protected $message;
