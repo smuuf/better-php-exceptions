@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Smuuf\BetterExceptions\Types;
 
-use \Smuuf\BetterExceptions\Types\Base\BetterError;
-
-class UnknownNamedParameterError extends BetterError {
+class UnknownNamedParameterError extends \Error {
 
 	/** @var string Name of the passed unknown parameter. */
 	protected string $parameterName;
