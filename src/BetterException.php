@@ -7,7 +7,7 @@ namespace Smuuf\BetterExceptions;
 use \Smuuf\BetterExceptions\Internals\Factories\MetaInfoFactory;
 
 /**
- * Unified interface for creating better exceptions from existing PHP extension
+ * Unified interface for creating better exceptions from existing PHP exception
  * objects.
  */
 abstract class BetterException {
