@@ -22,7 +22,7 @@ abstract class ProcessorFactory {
 		if (!class_exists($class)) {
 			throw new ErrorException(sprintf(
 				"Cannot create better exception from '$exType'"
-				. " for PHP %s"
+				. " for PHP %s with message '{$ex->getMessage()}'"
 				. " (processor '$class' is missing)",
 				$ver
 			));

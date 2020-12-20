@@ -124,8 +124,18 @@ Currently only a handful _(in the beginning it was just a single one, since I ne
 
 - `\TypeError` can be converted into:
 	- `\Smuuf\BetterExceptions\Types\ArgumentTypeError`
+		- Provides methods:
+			- `getExpected()`: Returns a list of strings of expected argument types.
+			- `getActual()`: Returns actual argument type as string.
 	- `\Smuuf\BetterExceptions\Types\ReturnTypeError`
+		- _Same as `\Smuuf\BetterExceptions\Types\ArgumentTypeError`._
 
 - `\Error` can be converted into:
 	- `\Smuuf\BetterExceptions\Types\UnknownNamedParameterError`
-
+		- Provides methods:
+			- `getParameterName()`: Returns the name of unknown parameter as string.
+- `\ArgumentCountError` can be converted into:
+	- `\Smuuf\BetterExceptions\Types\ArgumentCountError`
+		- Provides methods:
+			- `getExpected()`: Returns expected number of arguments.
+			- `getActual()`: Returns the actual number of arguments.

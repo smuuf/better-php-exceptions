@@ -45,4 +45,29 @@ function get_better_exception(callable $fn, ...$args) {
 		return BetterException::from($ex);
 	}
 
+	throw new \LogicException("Expected exception but got nothing :(");
+
+}
+
+/**
+ * Test-driven-development helper for creating new mapping - create new test for
+ * new mapping and use this helper to see the original exception message.
+ *
+ * (Yes, an exception would be printed out anyway by PHP or by Tester, but
+ * then would terminate. This way you can set up multiple cases and see all
+ * messages at once.)
+ */
+function print_exception_message(callable $fn, ...$args) {
+
+	try {
+		$fn(...$args);
+	} catch (\Throwable $ex) {
+
+		$class = get_class($ex);
+		$parents = implode(' extends ', class_parents($ex));
+		echo sprintf("Exception: %s (extends $parents)\n", $class);
+		echo "  Message: {$ex->getMessage()}\n";
+
+	}
+
 }

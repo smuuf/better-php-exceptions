@@ -9,9 +9,6 @@ namespace Smuuf\BetterExceptions\Types\Base;
  */
 abstract class BetterTypeError extends \TypeError {
 
-	/** @var string Exception message. */
-	protected $message;
-
 	/** @var array<string> List of expected types. */
 	protected array $expected;
 
